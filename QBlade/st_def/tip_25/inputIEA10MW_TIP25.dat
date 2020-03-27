@@ -1,0 +1,121 @@
+---------------------- QBLADE STRUCTURAL MODEL INPUT FILE -----------------
+iea10mw turbine
+------------------------------- CHRONO PARAMETERS -------------------------
+0.2			GLBGEOEPS - Global geometry epsilon for node placement
+9.81 		GRAVITY - gravity constant
+
+------------------------------- HAWT TURBINE CONFIGURATION ----------------
+0			PRECONE - Rotor PreCone (deg) (HAWT only)
+0			SHFTTILT - Turbine Shaft Tilt (deg) (HAWT only)
+7.1			OVERHANG - Rotor Overhang (m) (HAWT only)
+2.75			TWR2SHFT - Tower to Shaft distance (m) (HAWT only)
+
+------------------------------- MASS AND INERTIA --------------------------
+0.0			YAWBRMASS - Yaw Bearing Mass (kg) (HAWT only)
+4.4604E+05			NACMASS - Nacelle Mass (kg) (HAWT only)
+-3.0061E-01    			NACCMX - Downwind distance from the tower-top to the nacelle CM (m) (HAWT only)
+0.0      		NACCMY - Lateral  distance from the tower-top to the nacelle CM (m) (HAWT only)
+2.6870E+00   			NACCMZ - Vertical distance from the tower-top to the nacelle CM (m) (HAWT only)
+4.1060E+06			NACYINER - Nacelle Yaw Inertia (kg*m^2) (HAWT only)
+1.0552E+05			HUBMASS - Hub Mass (kg)
+3.257E+05			HUBINER - Hub Inertia (kg*m^2)
+
+------------------------------- DRIVETRAIN MODEL --------------------------
+1			GBRATIO - gearbox ratio (N)
+0.94			GBOXEFF - gearbox efficiency (0-1)
+false			DRTRDOF - model drivetrain dynamics (true / false)
+534.116			GENINER	- Generator side (HSS) Inertia (kg*m^2)
+3.751E+06		DTTORSPR - Drivetrain torsional stiffness (N*m/rad)
+6215000			DTTORDMP - Drivetrain torsional damping (N*m*s/rad)
+
+------------------------------- INITIAL CONDITIONS ------------------------
+0			INITAZI - initial azimuthal angle (deg)
+0			INITYAW - initial rotor yaw (deg) (HAWT only)
+0			ERRORYAW - yaw error (deg) (HAWT only)
+0			INITPITCH_1 - initial blade pitch blade1 (deg)
+0			INITPITCH_2 - initial blade pitch blade2 (deg)
+0			INITPITCH_3 - initial blade pitch blade3 (deg)
+0			ERRORPITCH_1 - pitch error blade1 (deg)
+0			ERRORPITCH_2 - pitch error blade2 (deg)
+0			ERRORPITCH_3 - pitch error blade3 (deg)
+
+------------------------------- BLADES ------------------------------------
+3			NUMBLD - Number of blades 
+bladefileIEA10MW_TIP25.dat	BLDFILE_1 - Name of file containing properties for blade 1
+bladefileIEA10MW_TIP25.dat	BLDFILE_2 - Name of file containing properties for blade 2
+bladefileIEA10MW_TIP25.dat	BLDFILE_3 - Name of file containing properties for blade 3
+struct			BLDDISC - Number of structural nodes per blade
+
+------------------------------- TOWER -------------------------------------
+115.63			TWRHEIGHT - Height of the tower (m)
+towerfileIEA10MW.dat	TWRFILE - Name of file containing properties for the tower
+20			TWRDISC - Number of structural nodes for the tower
+
+------------------------------- DATA OUTPUT TYPES -------------------------
+true			FOR_OUT - store forces at all chosen locations (true / false)
+true			MOM_OUT - store moments at all chosen locations (true / false)
+true			DEF_OUT - store deflections at all chosen locations (true / false)
+true			ROT_OUT - store cummulative rotations at all chosen locations (true / false)
+true			POS_OUT - store absolute positions at all chosen locations (true / false)
+true			ACC_OUT - store accelerations at all chosen locations (true / false)
+true			VEL_OUT - store velocities at all chosen locations (true / false)
+
+
+------------------------------- DATA OUTPUT LOCATIONS ---------------------
+any number, or zero, user defined positions can be chosen as output locations. locations can be assigned at any of the following components:
+blades, struts, tower and guy cables. See the following examples for the used nomenclature:
+
+BLD_1_0.0		- exemplary position, blade 1 at 0% normalized radius 
+BLD_1_0.009
+BLD_1_0.028
+BLD_1_0.047
+BLD_1_0.094
+BLD_1_0.141
+BLD_1_0.188
+BLD_1_0.236
+BLD_1_0.306
+BLD_1_0.377
+BLD_1_0.448
+BLD_1_0.518
+BLD_1_0.589
+BLD_1_0.660
+BLD_1_0.730
+BLD_1_0.801
+BLD_1_0.873
+BLD_1_0.927
+BLD_1_0.947
+BLD_1_0.949
+BLD_1_0.951
+BLD_1_0.954
+BLD_1_0.956
+BLD_1_0.959
+BLD_1_0.961
+BLD_1_0.963
+BLD_1_0.966
+BLD_1_0.968
+BLD_1_0.970
+BLD_1_0.973
+BLD_1_0.975
+BLD_1_0.978
+BLD_1_0.980
+BLD_1_0.982
+BLD_1_0.985
+BLD_1_0.987
+BLD_1_0.989
+BLD_1_0.992
+BLD_1_1.000
+
+
+
+TWR_0.0		- exemplary position, tower at 0% normalized height  
+TWR_0.1	
+TWR_0.2	
+TWR_0.3	
+TWR_0.4	
+TWR_0.5	
+TWR_0.6	
+TWR_0.7	
+TWR_0.8	
+TWR_0.9	
+TWR_1.0	
+
